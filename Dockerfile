@@ -1,4 +1,4 @@
-FROM tensorflow/tfx:0.22.0
+FROM tensorflow/tfx:0.24.1
 
 ENV CUDA_VERSION 10.1.243
 ENV CUDA_PKG_VERSION 10-1=$CUDA_VERSION-1

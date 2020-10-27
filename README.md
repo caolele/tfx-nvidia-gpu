@@ -2,23 +2,17 @@
 
 Tensorflow TFX with NVIDIA drivers included for easy usage; it can be used on TFX pipelines on Kubeflow where the underlying Kubernetes have supported GPU nodes.
 
-## Getting Started
+## Build and publish the image
 
-Refer this image into TFX pipeline.
-
-### Requirements
-
-In order to run this container you need a Kubeflow installation with NVIDIA GPU enabled nodes.
+```bash
+docker build -t leleca/tfx-nvidia-gpu .
+docker run leleca/tfx-nvidia-gpu
+docker tag leleca/tfx-nvidia-gpu leleca/tfx-nvidia-gpu:0.24.1
+docker login
+docker push leleca/tfx-nvidia-gpu:0.24.1
+```
 
 ### Usage
 
-In TFX Kubeflow pipeline image must be set to customa value: `valerianomanassero/tfx-nvidia-gpu:<version>`
-Images available tags are on https://hub.docker.com/r/valerianomanassero/tfx-nvidia-gpu/tags
-
-## Contributing
-
-Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## License
-
-This project is licensed under the Apache License License - see the [LICENSE](LICENSE) file for details.
+In TFX Kubeflow pipeline image must be set to customa value: `leleca/tfx-nvidia-gpu:<version>`
+Images available tags are on https://hub.docker.com/r/leleca/tfx-nvidia-gpu/tags
